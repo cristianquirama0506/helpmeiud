@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/registrocaso.css">
+  <title>Registro de Caso</title>
+</head>
+<body>
+  <div class="container">
+    <form id="registroCasoForm">
+      <h1>Registro de Caso</h1>
+      <label for="tipoDelito">Tipo de Delito:</label>
+      <select id="tipoDelito" name="tipoDelito" required>
+        <option value="acosoSexual">Acoso Sexual</option>
+        <option value="atraco">Atraco</option>
+        <option value="asesinato">Asesinato</option>
+      </select>
+      <label for="horaFecha">Hora y Fecha:</label>
+      <input type="datetime-local" id="horaFecha" name="horaFecha" required>
+
+      <!-- Coordenadas -->
+      <div class="coordenadas">
+        <label for="latitud">Latitud:</label>
+        <input type="text" id="latitud" name="latitud" placeholder="Ej. 40.7128" required>
+        <label for="longitud">Longitud:</label>
+        <input type="text" id="longitud" name="longitud" placeholder="Ej. -74.0060" required>
+      </div>
+
+      <!-- Mapa de Google para Ubicación -->
+      <div id="map"></div>
+
+      <!-- Descripción (opcional) -->
+      <label for="descripcion">Descripción (opcional):</label>
+      <textarea id="descripcion" name="descripcion" rows="4"></textarea>
+
+      <!-- Botón de Envío -->
+      <button type="submit">Registrar Caso</button>
+    </form>
+  </div>
+  <script src="js/registrocaso.js"></script>
+  <!-- Agrega la referencia a la API de Google Maps JavaScript -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_DE_API&libraries=places&callback=inicializarMapa" async defer></script>
+</body>
+</html>
+
